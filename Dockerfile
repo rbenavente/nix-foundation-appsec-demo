@@ -1,5 +1,6 @@
 FROM node:14.21-alpine
 
+
 # install simple http server for serving static content
 RUN npm install -g http-server
 
