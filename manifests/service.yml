@@ -9,3 +9,4 @@ spec:
   selector:
     app: nix-foundation-www
   type: LoadBalancer
+  
