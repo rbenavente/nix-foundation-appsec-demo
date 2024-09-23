@@ -16,7 +16,7 @@ jobs:
       IMAGE_TAG: latest
       WIZ_CLIENT_ID: ${{ secrets.WIZ_CLIENT_ID }}
       WIZ_CLIENT_SECRET: ${{ secrets.WIZ_CLIENT_SECRET }}
-      WIZ_POLICY: "Default vulnerabilities policy"
+      WIZ_POLICY: "rocio-vuln"
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
