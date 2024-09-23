@@ -36,7 +36,7 @@ jobs:
         run: |-
           sudo -E ./wizcli docker scan -i ${IMAGE_REPO}:${IMAGE_TAG} --policy "$WIZ_POLICY" --policy-hits-only \
           --driver mountWithLayers --dockerfile "./Dockerfile" --output wiz-output.json,sarif,true --tag github_action_run_id=${{ github.run_id }}
-        continue-on-error: true
+        continue-on-error: false
 
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
