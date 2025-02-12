@@ -9,7 +9,6 @@ WORKDIR /app
 # copy both 'package.json' and 'package-lock.json' (if available)
 COPY package*.json ./
 
-
 # copy both 'babel.config.js'
 COPY babel.config.js ./
 
