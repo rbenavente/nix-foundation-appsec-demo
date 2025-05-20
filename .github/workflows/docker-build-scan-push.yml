@@ -16,7 +16,9 @@ jobs:
       IMAGE_TAG: latest
       WIZ_CLIENT_ID: ${{ secrets.WIZ_CLIENT_ID }}
       WIZ_CLIENT_SECRET: ${{ secrets.WIZ_CLIENT_SECRET }}
-      WIZ_POLICY: "rocio-vuln"
+      WIZ_VULN_POLICY: "rocio-vuln"
+      WIZ_SENSITIVE_DATA_POLICY: "Default sensitive data policy"
+      WIZ_SECRETS_POLICY: "Default secrets policy"
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
@@ -34,7 +36,7 @@ jobs:
       - name: Run Wiz CLI image scan
         id: scan
         run: |-
-          sudo -E ./wizcli docker scan -i ${IMAGE_REPO}:${IMAGE_TAG} --policy "$WIZ_POLICY" --policy-hits-only \
+          sudo -E ./wizcli docker scan -i ${IMAGE_REPO}:${IMAGE_TAG}  --policy "$WIZ_SECRETS_POLICY" --policy "$WIZ_VULN_POLICY" --policy "$WIZ_SENSITIVE_DATA_POLICY" --policy-hits-only \
           --driver mountWithLayers --dockerfile "./Dockerfile" --output wiz-output.json,sarif,true --tag github_action_run_id=${{ github.run_id }}
         continue-on-error: false
 
