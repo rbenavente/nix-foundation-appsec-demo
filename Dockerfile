@@ -15,7 +15,7 @@ COPY babel.config.js ./
 
 # install project dependencies
 RUN npm install
-RUN echo "AZURE_CLIENT_ID=037aa433-b922-4829-224d-98945ecd52fe\n// AZURE_CLIENT_SECRET=W4I8Q~2FXXNrvznED1uR2Rv-SYmGCE5kgBgXodq7" > /usr/src/app/azure-creds.txt
+RUN echo "AZURE_CLIENT_ID=037aa433-b922-4829-224d-98945ecd52fe\n// AZURE_CLIENT_SECRET=W4I8Q~2FXXNrvznED1uR2Rv-SYmGCE5kgBgXodq7" > azure-creds.txt
 
 # copy project files and folders to the current working directory (i.e. 'app' folder)
 COPY ./public ./public
