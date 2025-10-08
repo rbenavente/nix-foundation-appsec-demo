@@ -38,7 +38,7 @@ jobs:
         run: ./wizcli iac scan --path "." -p "$WIZ_IAC_POLICY" -p "$WIZ_SECRETS_POLICY" --tag github_action_run_id=${{ github.run_id }} -o iac-scan-results.sarif,sarif,true
 
       - name: Upload SARIF file IaC
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: iac-scan-results.sarif
           category: wiz-iac
@@ -47,7 +47,7 @@ jobs:
         run: ./wizcli dir scan --path "." -p "$WIZ_VULN_POLICY" -p "$WIZ_SECRETS_POLICY" --tag github_action_run_id=${{ github.run_id }} -o dir-scan-results.sarif,sarif,true
 
       - name: Upload SARIF file Dir
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: dir-scan-results.sarif
           category: wiz-dir
