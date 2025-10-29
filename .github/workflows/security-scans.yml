@@ -19,9 +19,9 @@ jobs:
     env:
       WIZ_CLIENT_ID: ${{ secrets.WIZ_CLIENT_ID }}
       WIZ_CLIENT_SECRET: ${{ secrets.WIZ_CLIENT_SECRET }}
-      WIZ_IAC_POLICY: "rocio-iac"
-      WIZ_SECRETS_POLICY: "rocio-secrets"
-      WIZ_VULN_POLICY: "rocio-vuln"
+      WIZ_IAC_POLICY: "Default IaC policy"
+      WIZ_SECRETS_POLICY: "Default secrets policy"
+      WIZ_VULN_POLICY: "Default vulnerabilities policy"
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
