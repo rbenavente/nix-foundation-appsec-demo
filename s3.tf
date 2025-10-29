@@ -1,7 +1,7 @@
 resource "aws_s3_bucket" "mongodb_backups" {
   bucket        = "nixlab-mongodb-backups"
   force_destroy = true
-
+    
   tags = {
     "S3_BLOCK_ACCESS_EXEMPT" : true
   }
